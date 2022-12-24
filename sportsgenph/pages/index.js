@@ -4,11 +4,40 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import bg from '../public/bg1.webp'
 import logo from '../public/sportsgenph_Text_vector.png'
+import logo2 from '../public/footer_Text_vector.png'
 import { LoginDetails } from '../components/LoginDetails.js'
 
 
 
+
+const LOGO = () => (
+    
+  <Image
+    src={logo} 
+    alt="SportsGenPh logo"
+    sizes="(height: 13rem)"
+  />
+
+)
+
+const LOGO2 = () => (
+    
+  <Image  
+  src={logo2} 
+  alt="SportsGenPh logo" 
+  sizes="(height: 1rem,
+          width: 5rem
+    )" 
+  />
+
+)
+
+
+
+
+
 export default function Home() {
+ 
   return (
     <>
     
@@ -27,7 +56,8 @@ export default function Home() {
         {/* <LoginDetails /> */}
           <div className={styles.title}>
             <span className={styles.customlogo}>
-              <Image  src={logo}  alt="SportsGenPh logo" priority='true'/>
+              <LOGO />
+              {/* <Image  src={logo}  alt="SportsGenPh logo" priority='true'/> */}
             </span>
           </div>
 
@@ -75,7 +105,7 @@ export default function Home() {
           >
             Powered by:{'  '}
             <span className={styles.footerlogo}>
-              <Image  src={logo} alt="SportsGenPh logo" width={110} height={16} margin-left={5}  priority='true' />
+              <LOGO2 />
             </span>
           </Link>
         </footer>

@@ -20,7 +20,7 @@ export default function Menu({loginClick, modalOpen}) {
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             <span>
-              <Image src={logo} alt="bull logo" width={35} height={45} />
+              {/* <Image src={logo} alt="bull logo" width={35} height={45} /> */}
             </span>
           </a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
