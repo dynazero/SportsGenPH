@@ -1,6 +1,12 @@
+import { useEffect, useState } from 'react'
 import { motion } from "framer-motion"
+import dynamic from 'next/dynamic' 
 import Backdrop from "../Backdrop"
 import LoginForm from '../LoginDetails'
+
+const DynamicHeader = dynamic(() => import ('../SignupDetails'),{
+    loading: () => 'Please Wait...',
+})
 
 
 const dropIn = {
@@ -24,21 +30,36 @@ const dropIn = {
     },
 }
 
-const Modal = ({ handleClose, text }) => {
+const Modal = ({ handleClose, text , panelSide}) => {
+
+
+    const [compSwitch, setcompSwitch] = useState(true);
+    
+    useEffect(() => {
+        setcompSwitch(panelSide)
+
+    },[panelSide])
+    
 
     return (
+        <>
+        
         <Backdrop onClick={handleClose}>
-            <motion.div onClick={(e) => e.stopPropagation()}
-            className="modalCustom orange-gradient"
+            <motion.div onClick={(e) => {e.stopPropagation()} }
+            className="modalCustom"
             variants={dropIn}
             initial= "hidden"
             animate= "visible"
             exit= "exit"
             >
-                <LoginForm />
+                {compSwitch ? <LoginForm /> : <DynamicHeader /> }
+                
        
             </motion.div>
+
+
         </Backdrop>
+        </>
     )
 
 };
