@@ -1,153 +1,94 @@
-import React from 'react'
+import { MotionConfig, motion } from 'framer-motion';
+import React, { useState,useRef, useEffect } from 'react'
+import ReactDOM from "react-dom";
+import images from '../public/events/images.js'
+
+const eventItem = [
+  { id:1, 
+    title: "ekf referee course kata - larnca 2023", 
+    eventdate:  Date("2023-02-03"), 
+    logo: images.image1,
+    regdatestart:  Date("2023-02-03"),
+    regdateend:  Date("2023-02-05"),
+    //days+hrs
+    // countdown: Date(regdatestart - regdateend)
+  },
+  { id:2, 
+    title: "karate1 series a - athens 2023", 
+    eventdate: Date("2023-01-13"),
+    logo: images.image2,
+    regdatestart: Date("2023-01-13"),
+    regdateend: Date("2023-01-15"),
+    //days+hrs
+    // countdown: regdatestart-regdateend
+  },
+  { id:3, 
+    title: "karate1 premier league - cairo 2023", 
+    eventdate: Date("2023-01-27"),
+    logo: images.image3,
+    regdatestart: Date("2023-01-01"),
+    regdateend: Date("2023-01-27"),
+    //days+hrs
+    // countdown: regdatestart-regdateend
+  },
+  { id:4, 
+    title: "ekf referee course kata - larnca 2023", 
+    eventdate:  Date("2023-02-03"), 
+    logo: images.image1,
+    regdatestart:  Date("2023-02-03"),
+    regdateend:  Date("2023-02-05"),
+    //days+hrs
+    // countdown: regdatestart-regdateend
+  },
+  { id:5, 
+    title: "karate1 series a - athens 2023", 
+    eventdate: Date("2023-01-13"),
+    logo: images.image2,
+    regdatestart: Date("2023-01-13"),
+    regdateend: Date("2023-01-15"),
+    //days+hrs
+    // countdown: regdatestart-regdateend
+  },
+  { id:6, 
+    title: "karate1 premier league - cairo 2023", 
+    eventdate: Date("2023-01-27"),
+    logo: images.image3,
+    regdatestart: Date("2023-01-01"),
+    regdateend: Date("2023-01-27"),
+    //days+hrs
+    // countdown: regdatestart-regdateend
+  }
+];
 
 export default function events() {
+ let a = eventItem[0].eventdate;
+ let dateDay = new Date(a);
+ let b = dateDay.getMonth();
+
+ console.log(a);
+console.log(b);
   return (
     <>
-        <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-          <li class="nav-item" role="presentation">
-            <a
-              class="nav-link active"
-              id="tab-login"
-              data-mdb-toggle="pill"
-              href="#pills-login"
-              role="tab"
-              aria-controls="pills-login"
-              aria-selected="true"
-              >Login</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a
-              class="nav-link"
-              id="tab-register"
-              data-mdb-toggle="pill"
-              href="#pills-register"
-              role="tab"
-              aria-controls="pills-register"
-              aria-selected="false"
-              >Register</a>
-          </li>
-        </ul>
-        <div class="tab-content">
-  <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-    <form>
-      <div class="text-center mb-3">
-        <p>Sign in with:</p>
-        <button type="button" class="btn btn-secondary btn-floating mx-1">
-          <i class="fab fa-facebook-f"></i>
-        </button>
-
-        <button type="button" class="btn btn-secondary btn-floating mx-1">
-          <i class="fab fa-google"></i>
-        </button>
-
-        <button type="button" class="btn btn-secondary btn-floating mx-1">
-          <i class="fab fa-twitter"></i>
-        </button>
-
-        <button type="button" class="btn btn-secondary btn-floating mx-1">
-          <i class="fab fa-github"></i>
-        </button>
-      </div>
-
-      <p class="text-center">or:</p>
-
-      <div class="form-outline mb-4">
-        <input type="email" id="loginName" class="form-control" />
-        <label class="form-label" for="loginName">Email or username</label>
-      </div>
-
-      <div class="form-outline mb-4">
-        <input type="password" id="loginPassword" class="form-control" />
-        <label class="form-label" for="loginPassword">Password</label>
-      </div>
-
-      <div class="row mb-4">
-        <div class="col-md-6 d-flex justify-content-center">
-          <div class="form-check mb-3 mb-md-0">
-            <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
-            <label class="form-check-label" for="loginCheck"> Remember me </label>
-          </div>
+    <div className='picClass mx-auto'>
+    <h1 className='eventsH1' style={{ textAlign: 'center' }}>Events</h1>
+      {eventItem.map((item, i) => (
+        <motion.div
+        key={item.id}
+        className='picClassItem eventsDialogBox shadow-lg p-3 mb-5 bg-body rounded'
+        initial={{ opacity: 0, translateX: -50, translateY: -50 }}
+        animate = {{ opacity: 1, translateX: 0, translateY: 0}}
+        transition={{ duration: 0.3, delay: i * 0.2}}
+        >
+          <h2> {item.title} </h2>
+        <div>
+         {/* {toString(item.eventdate[0].Date)} */}
         </div>
 
-        <div class="col-md-6 d-flex justify-content-center">
-          <a href="#!">Forgot password?</a>
-        </div>
+        </motion.div>
+      ))}
+    
       </div>
-
-      <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-
-      <div class="text-center">
-        <p>Not a member? <a href="#!">Register</a></p>
-      </div>
-    </form>
-  </div>
-  <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-    <form>
-      <div class="text-center mb-3">
-        <p>Sign up with:</p>
-        <button type="button" class="btn btn-secondary btn-floating mx-1">
-          <i class="fab fa-facebook-f"></i>
-        </button>
-
-        <button type="button" class="btn btn-secondary btn-floating mx-1">
-          <i class="fab fa-google"></i>
-        </button>
-
-        <button type="button" class="btn btn-secondary btn-floating mx-1">
-          <i class="fab fa-twitter"></i>
-        </button>
-
-        <button type="button" class="btn btn-secondary btn-floating mx-1">
-          <i class="fab fa-github"></i>
-        </button>
-      </div>
-
-      <p class="text-center">or:</p>
-
-      <div class="form-outline mb-4">
-        <input type="text" id="registerName" class="form-control" />
-        <label class="form-label" for="registerName">Name</label>
-      </div>
-
-      <div class="form-outline mb-4">
-        <input type="text" id="registerUsername" class="form-control" />
-        <label class="form-label" for="registerUsername">Username</label>
-      </div>
-
-      <div class="form-outline mb-4">
-        <input type="email" id="registerEmail" class="form-control" />
-        <label class="form-label" for="registerEmail">Email</label>
-      </div>
-
-      <div class="form-outline mb-4">
-        <input type="password" id="registerPassword" class="form-control" />
-        <label class="form-label" for="registerPassword">Password</label>
-      </div>
-
-      <div class="form-outline mb-4">
-        <input type="password" id="registerRepeatPassword" class="form-control" />
-        <label class="form-label" for="registerRepeatPassword">Repeat password</label>
-      </div>
-
-      <div class="form-check d-flex justify-content-center mb-4">
-        <input
-          class="form-check-input me-2"
-          type="checkbox"
-          value=""
-          id="registerCheck"
-          checked
-          aria-describedby="registerCheckHelpText"
-        />
-        <label class="form-check-label" for="registerCheck">
-          I have read and agree to the terms
-        </label>
-      </div>
-
-      <button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
-    </form>
-  </div>
-</div>
-
     </>
   )
 }
+

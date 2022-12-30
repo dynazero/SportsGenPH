@@ -1,3 +1,15 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .backdrop{
     position: absolute;
     top:0;
@@ -25,7 +37,11 @@
 
   .loginWidthModal,
   .signupnWidthModal{
-    width: 330px;
+    width: 500px;
+  }
+
+  .sigupHeightModal{
+    height: min(60%, 700px);
   }
 
   .form-signinCustom {
@@ -33,15 +49,43 @@
     max-width: 330px;
     padding: 15px;
     margin: auto;
+    min-height: 420px;
   }
 
   .form-signupCustom {
     width: 100%;
-    max-width: 330px;
+    max-width: 410px;
     padding: 0px;
     margin: auto;
   }
+
   
+  .indicatorsCustom{
+    height: min(390px, 700px);
+    min-width: 400px;
+    padding: 15px;
+    overflow: visible;
+  }
+
+  .carousel-itemCustom{
+    min-height: 300px;
+  }
+
+  .customIndicatorButtons{
+    bottom:10%;
+  }
+
+  .customIndicatorButtons [data-bs-target]{
+    background-color:rgb(235, 71, 71);
+    width: 80px;
+  }
+
+  .inputCustomCarousel,
+  .inputCustomLogin
+  {
+    margin: 15px 0px;
+  }
+
   .form-signin .checkbox {
     font-weight: 400;
   }
@@ -61,4 +105,7 @@
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
+
+
+
   

@@ -11,7 +11,7 @@ export default function LoginDetails() {
       <form>
         <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
-        <div className="form-floating">
+        <div className="form-floating inputCustomLogin">
           <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" />
           <label htmlFor="floatingInput">Email address</label>
         </div>
@@ -25,6 +25,8 @@ export default function LoginDetails() {
             <input type="checkbox" value="remember-me" /> Remember me
           </label>
         </div>
+
+        
         <motion.button 
         className="w-100 btn btn-lg btn-primary save-button" 
         whileHover={{ scale: 1.1 }}
@@ -35,6 +37,13 @@ export default function LoginDetails() {
         >Sign in
         </motion.button>
       </form>
+
+      <div className="checkbox mb-3" style={{marginTop:'24px'}}>
+          <label >
+          <a class="dropdown-item" href="#">Forgot password?</a>
+            {/* <input type="checkbox" value="remember-me" /> Remember me */}
+          </label>
+        </div>
     </main>
 
   </section>
