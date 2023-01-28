@@ -40,7 +40,7 @@ export default function LoginDetails() {
 
       <div className="checkbox mb-3" style={{marginTop:'24px'}}>
           <label >
-          <a class="dropdown-item" href="#">Forgot password?</a>
+          <a className="dropdown-item" href="#">Forgot password?</a>
             {/* <input type="checkbox" value="remember-me" /> Remember me */}
           </label>
         </div>

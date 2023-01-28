@@ -16,6 +16,7 @@ const LOGO = () => (
     src={logo} 
     alt="SportsGenPh logo"
     sizes="(height: 13rem)"
+    priority
   />
 
 )
@@ -72,7 +73,7 @@ export default function Home() {
               <p>Check real-time Events!</p>
             </Link>
 
-            <Link href="/ranks" className={styles.card}>
+            <Link href="#" className={styles.card}>
               <h2>Ranking &rarr;</h2>
               <p>Regional Rankings!</p>
             </Link>
@@ -86,7 +87,7 @@ export default function Home() {
             </Link>
 
             <Link
-              href="/createeventnewuser"
+              href="/createevent"
               className={styles.card}
             >
               <h2>Manage an Event &rarr;</h2>

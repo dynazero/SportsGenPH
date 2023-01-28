@@ -35,7 +35,7 @@ export default function ranks() {
     <div className='eventClass'>
     <h1 className='eventsH1' style={{ textAlign: 'center' }}>Home</h1>
       <div className="events">
-        <motion.div  ref={carousel} className="carousel" whileTap={{cursor: "grabbing"}}>
+        <motion.div  ref={carousel} className="carousel samplecarousel" whileTap={{cursor: "grabbing"}}>
           <motion.div 
           drag="x" 
           dragConstraints={{right:0, left: -width}} 

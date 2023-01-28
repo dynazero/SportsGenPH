@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }){
     setModalOpen(modal);
     
     setPanelSide(panel)
-    console.log('_app panel'+ panel);
+    // console.log('_app panel'+ panel);
   };
 
   

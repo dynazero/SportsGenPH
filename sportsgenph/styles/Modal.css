@@ -24,7 +24,7 @@ input[type=number] {
   
   .modalCustom{
     width: clamp(30%, 500px, 90%);
-    height: min(60%, 700px);
+    height: min(494px, 700px);
     margin:auto;
     padding:0 2rem;
     border-radius: 12px;
@@ -59,6 +59,32 @@ input[type=number] {
     margin: auto;
   }
 
+  .encloseOption{
+    position: fixed;
+    width: 24rem;
+    z-index: 4;
+  }
+
+  .encloseCountry{
+    position: fixed;
+    width: 24rem;
+    z-index: 5;
+    top:30%
+  }
+
+  .encloseCity{
+    position: fixed;
+    width: 24rem;
+    z-index: 4;
+    top:41%
+  }
+
+  .moveAddress{
+    position: fixed;
+    width: 24rem;
+    top:48%;
+  }
+
   
   .indicatorsCustom{
     height: min(390px, 700px);
@@ -72,7 +98,7 @@ input[type=number] {
   }
 
   .customIndicatorButtons{
-    bottom:10%;
+    bottom:0%;
   }
 
   .customIndicatorButtons [data-bs-target]{
