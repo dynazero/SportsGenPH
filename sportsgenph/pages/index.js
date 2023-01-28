@@ -68,7 +68,7 @@ export default function Home() {
           </p>
 
           <div className={styles.homepagegrid}>
-            <Link href="/events" className={styles.card}>
+            <Link href="/event" className={styles.card}>
               <h2>Events &rarr;</h2>
               <p>Check real-time Events!</p>
             </Link>
@@ -87,7 +87,7 @@ export default function Home() {
             </Link>
 
             <Link
-              href="/createevent"
+              href="/event/create"
               className={styles.card}
             >
               <h2>Manage an Event &rarr;</h2>

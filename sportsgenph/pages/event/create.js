@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link'
 import { MotionConfig, motion } from 'framer-motion';
 import { Datepicker } from '@adibfirman/react-datepicker'
-import InputDropdownRow from '../components/inputDropdownRow';
+import InputDropdownRow from '../../components/inputDropdownRow';
 
 const Createevent = () => {
     const MotionLink = motion(Link)

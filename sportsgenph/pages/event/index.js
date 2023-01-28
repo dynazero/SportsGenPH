@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { MotionConfig, motion } from 'framer-motion';
 import React, { useState, useRef, useEffect } from 'react'
 import ReactDOM from "react-dom";
-import images from '../public/events/images.js'
+import images from '../../public/events/images.js'
 import Image from 'next/image'
 import { Component } from "react";
 import { Datepicker } from '@adibfirman/react-datepicker'
@@ -173,7 +173,7 @@ export default function events() {
                   Events
                 </div>
                 <div className='ms-auto p-2 bd-highlight '>
-                  <MotionLink type="button" href="/createevent" className="btn btn-primary" 
+                  <MotionLink type="button" href="/event/create" className="btn btn-primary" 
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
