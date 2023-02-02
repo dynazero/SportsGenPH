@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "export": "next build && next export -o _static",
+    "lint": "next lint",
+    "build:digitalOcean": "yarn install --production=false && rimraf dist && yarn build && yarn install --production --frozen-lockfile"
+    
   },
   "dependencies": {
     "@adibfirman/react-datepicker": "^1.0.3",
@@ -39,5 +42,10 @@
   "main": "next.config.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "18.12.1"
+  }
+  
+  
 }
